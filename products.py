@@ -11,8 +11,12 @@ while True:
     #p.append(price)
     
     products.append([name, price])
-print(products)
-            
-print(products[0])
-print(products[0][0])
-print(products[0][1])
+# print(products)
+  
+# print(products[0])
+# print(products[0][0])
+# print(products[0][1])
+
+for p in products:
+    print(p[0], '的價格', p[1])
+  
