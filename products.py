@@ -1,16 +1,21 @@
 # 建立記帳程式專案 (二維清單)
 
-#讀取檔案
+import os #operation system 作業系統
 products = []
-with open('products.csv', 'r', encoding = 'big5') as f:
-    for line in f:
-        if '商品,價格' in line:
-            continue
-        #s = line.strip().split(',')
-        #print(s)
-        name, price = line.strip().split(',')
-        products.append([name, price])
-print(products)
+if os.path.isfile('products.csv'):
+    print('yeah! 找到檔案了')
+    #讀取檔案
+    with open('products.csv', 'r', encoding = 'big5') as f:
+        for line in f:
+            if '商品,價格' in line:
+                continue
+            #s = line.strip().split(',')
+            #print(s)
+            name, price = line.strip().split(',')
+            products.append([name, price])
+    print(products)
+else:
+    print('找不到檔案....')
         
 #讓使用者輸入        
 products = []
